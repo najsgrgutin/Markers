@@ -1,0 +1,7 @@
+hr\r\h\model\MarkerType.class
+hr\r\h\repository\MarkerRepository.class
+hr\r\h\model\Marker.class
+hr\r\h\MainApp.class
+hr\r\h\repository\PersonRepository.class
+hr\r\h\model\Person.class
+hr\r\h\controller\ViewController.class

@@ -1,0 +1,249 @@
+package hr.r.h.model;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(name = "person", uniqueConstraints = { @UniqueConstraint(columnNames = { "id" }) })
+public class Person implements Serializable {
+
+	private static final long serialVersionUID = 2491665823020870975L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_id_seq")
+	@SequenceGenerator(name = "person_id_seq", sequenceName = "person_id_seq", allocationSize = 1)
+	@Column(name = "id")
+	private Integer id;
+
+	@Column(name = "region")
+	private String region;
+
+	@Column(name = "gender")
+	private String gender;
+
+	@Column(name = "year_of_birth")
+	private Integer yearOfBirth;
+
+	@Column(name = "a_1")
+	private String a1;
+
+	@Column(name = "a_2")
+	private String a2;
+
+	@Column(name = "b_1")
+	private String b1;
+
+	@Column(name = "b_2")
+	private String b2;
+
+	@Column(name = "c_1")
+	private String c1;
+
+	@Column(name = "c_2")
+	private String c2;
+
+	@Column(name = "drb1_1")
+	private String drb11;
+
+	@Column(name = "drb1_2")
+	private String drb12;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public Integer getYearOfBirth() {
+		return yearOfBirth;
+	}
+
+	public void setYearOfBirth(Integer yearOfBirth) {
+		this.yearOfBirth = yearOfBirth;
+	}
+
+	public String getA1() {
+		return a1;
+	}
+
+	public void setA1(String a1) {
+		this.a1 = a1;
+	}
+
+	public String getA2() {
+		return a2;
+	}
+
+	public void setA2(String a2) {
+		this.a2 = a2;
+	}
+
+	public String getB1() {
+		return b1;
+	}
+
+	public void setB1(String b1) {
+		this.b1 = b1;
+	}
+
+	public String getB2() {
+		return b2;
+	}
+
+	public void setB2(String b2) {
+		this.b2 = b2;
+	}
+
+	public String getC1() {
+		return c1;
+	}
+
+	public void setC1(String c1) {
+		this.c1 = c1;
+	}
+
+	public String getC2() {
+		return c2;
+	}
+
+	public void setC2(String c2) {
+		this.c2 = c2;
+	}
+
+	public String getDrb11() {
+		return drb11;
+	}
+
+	public void setDrb11(String drb11) {
+		this.drb11 = drb11;
+	}
+
+	public String getDrb12() {
+		return drb12;
+	}
+
+	public void setDrb12(String drb12) {
+		this.drb12 = drb12;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", region=" + region + ", gender=" + gender + ", yearOfBirth=" + yearOfBirth
+				+ ", a1=" + a1 + ", a2=" + a2 + ", b1=" + b1 + ", b2=" + b2 + ", c1=" + c1 + ", c2=" + c2 + ", drb11="
+				+ drb11 + ", drb12=" + drb12 + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((a1 == null) ? 0 : a1.hashCode());
+		result = prime * result + ((a2 == null) ? 0 : a2.hashCode());
+		result = prime * result + ((b1 == null) ? 0 : b1.hashCode());
+		result = prime * result + ((b2 == null) ? 0 : b2.hashCode());
+		result = prime * result + ((c1 == null) ? 0 : c1.hashCode());
+		result = prime * result + ((c2 == null) ? 0 : c2.hashCode());
+		result = prime * result + ((drb11 == null) ? 0 : drb11.hashCode());
+		result = prime * result + ((drb12 == null) ? 0 : drb12.hashCode());
+		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((region == null) ? 0 : region.hashCode());
+		result = prime * result + ((yearOfBirth == null) ? 0 : yearOfBirth.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Person other = (Person) obj;
+		if (a1 == null) {
+			if (other.a1 != null)
+				return false;
+		} else if (!a1.equals(other.a1))
+			return false;
+		if (a2 == null) {
+			if (other.a2 != null)
+				return false;
+		} else if (!a2.equals(other.a2))
+			return false;
+		if (b1 == null) {
+			if (other.b1 != null)
+				return false;
+		} else if (!b1.equals(other.b1))
+			return false;
+		if (b2 == null) {
+			if (other.b2 != null)
+				return false;
+		} else if (!b2.equals(other.b2))
+			return false;
+		if (c1 == null) {
+			if (other.c1 != null)
+				return false;
+		} else if (!c1.equals(other.c1))
+			return false;
+		if (c2 == null) {
+			if (other.c2 != null)
+				return false;
+		} else if (!c2.equals(other.c2))
+			return false;
+		if (drb11 == null) {
+			if (other.drb11 != null)
+				return false;
+		} else if (!drb11.equals(other.drb11))
+			return false;
+		if (drb12 == null) {
+			if (other.drb12 != null)
+				return false;
+		} else if (!drb12.equals(other.drb12))
+			return false;
+		if (gender == null) {
+			if (other.gender != null)
+				return false;
+		} else if (!gender.equals(other.gender))
+			return false;
+		if (id != other.id)
+			return false;
+		if (region == null) {
+			if (other.region != null)
+				return false;
+		} else if (!region.equals(other.region))
+			return false;
+		if (yearOfBirth == null) {
+			if (other.yearOfBirth != null)
+				return false;
+		} else if (!yearOfBirth.equals(other.yearOfBirth))
+			return false;
+		return true;
+	}
+
+}
